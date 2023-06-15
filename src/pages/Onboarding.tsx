@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Logo from "../components/Logo";
 import Arrow from "../assets/arrow.svg";
 import Login from "./Login";
@@ -16,7 +15,7 @@ const options = [
   { value: "signUp", component: <SignUp /> },
 ];
 
-const Onboarding = ({ onNext, onBack }: OnboardingProps) => {
+const Onboarding = ({ onBack }: OnboardingProps) => {
   return (
     <main className="w-full h-screen flex flex-col items-center gap-10 bg-gradient-to-r from-purple-500 to-pink-500">
       <div className="w-full flex justify-center pt-10 relative">

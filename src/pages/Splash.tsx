@@ -11,7 +11,7 @@ const Splash = ({ onNext }: SplashProps) => {
     <div className="grid grid-rows-2 grid-cols-1 place-items-center w-full h-screen bg-gradient-to-r from-purple-500 to-pink-500">
       <header className="flex flex-col items-center gap-10">
         <LogoHolder />
-        <img src={Logo} />
+        <img src={Logo} alt="logo" />
       </header>
 
       <main className="flex flex-col items-center gap-6">

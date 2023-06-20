@@ -26,7 +26,11 @@ const Login = () => {
         <div className="flex items-center gap-4">
           <Toggle label="REMEMBER ME?" name="rememberMe" />
           <Button border="circle" onClick={click} type="submit">
-            <img className="w-[15px] h-[15px]" src={CheckMark} />
+            <img
+              className="w-[15px] h-[15px]"
+              src={CheckMark}
+              alt="check mark"
+            />
           </Button>
         </div>
 
@@ -39,6 +43,7 @@ const Login = () => {
       </form>
       <div className="flex items-center justify-center gap-1 mt-auto border-t border-white max-w-[600px] w-full py-10">
         <p className="text-white opacity-50">NEW USER?</p>
+        {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <p
           onClick={() => setActiveTab("signUp")}
           className="text-white underline cursor-pointer"

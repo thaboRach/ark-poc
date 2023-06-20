@@ -35,7 +35,7 @@ const CheckBox = ({
     >
       <CheckboxInput />
       <CheckboxControl className="flex items-center bg-transparent rounded-md border-[1px] h-5 w-5 justify-center data-[checked]:bg-white data-[checked]:text-white">
-        {checked && <img className="w-3 h-3" src={CheckMark} />}
+        {checked && <img className="w-3 h-3" src={CheckMark} alt="check" />}
       </CheckboxControl>
       <CheckboxLabel className="inline-flex flex-col gap-[0.5] text-white">
         {label}

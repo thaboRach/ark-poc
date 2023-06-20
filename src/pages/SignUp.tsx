@@ -40,12 +40,17 @@ const SignUp = () => {
         <div className="flex items-center gap-4">
           <CheckBox label="AGREE TO TERMS?" name="agreeToTerms" />
           <Button border="circle" onClick={click} type="submit">
-            <img className="w-[15px] h-[15px]" src={Checkmark} />
+            <img
+              className="w-[15px] h-[15px]"
+              src={Checkmark}
+              alt="check mark"
+            />
           </Button>
         </div>
       </form>
       <div className="flex items-center justify-center gap-1 mt-auto border-t border-white max-w-[600px] w-full py-10">
         <p className="text-white opacity-50">ALREADY DID THIS?</p>
+        {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
         <p
           onClick={() => setActiveTab("login")}
           className="text-white underline cursor-pointer"

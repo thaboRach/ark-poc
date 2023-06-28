@@ -1,46 +1,37 @@
-import InputField from "../components/InputField";
-import Toggle from "../components/Toggle";
-import Button from "../components/Button";
-import { FacebookLogo, GoogleLogo, CheckMark } from "../assets";
 import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import TabsContext from "../context/tabs-context";
+import LoginForm from "../forms/LoginForm";
+import LoginFormikForm from "../forms/LoginFormikForm";
+import { ILoginForm } from "../types";
+import { LoginSchema } from "../utils/schemas";
 
 const Login = () => {
   const { setActiveTab } = useContext(TabsContext);
+  const location = useLocation();
 
-  const click = () => {
-    console.log("Login to 3rd party");
+  const initialValues: ILoginForm = {
+    firstName: "",
+    password: "",
+    rememberMe: false,
   };
+
+  function handleSubmit(values: ILoginForm) {
+    window.alert(JSON.stringify(values));
+  }
 
   return (
     <section className="flex flex-col flex-1 items-center gap-6 pt-20">
       <h2 className="text-4xl text-white">Welcome</h2>
-      <form className="flex flex-col items-center gap-4 max-w-[600px] w-full">
-        <InputField name="firstName" placeholder="Name" type="text" required />
-        <InputField
-          name="lastName"
-          placeholder="Password"
-          type="password"
-          required
+      {location.pathname === "/normal" ? (
+        <LoginForm />
+      ) : (
+        <LoginFormikForm
+          initialValues={initialValues}
+          validationSchema={LoginSchema}
+          onSubmit={handleSubmit}
         />
-        <div className="flex items-center gap-4">
-          <Toggle label="REMEMBER ME?" name="rememberMe" />
-          <Button border="circle" onClick={click} type="submit">
-            <img
-              className="w-[15px] h-[15px]"
-              src={CheckMark}
-              alt="check mark"
-            />
-          </Button>
-        </div>
-
-        <Button textColor="red" onClick={click} icon={GoogleLogo}>
-          Login with Google
-        </Button>
-        <Button textColor="blue" onClick={click} icon={FacebookLogo}>
-          Login with Facebook
-        </Button>
-      </form>
+      )}
       <div className="flex items-center justify-center gap-1 mt-auto border-t border-white max-w-[600px] w-full py-10">
         <p className="text-white opacity-50">NEW USER?</p>
         {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}

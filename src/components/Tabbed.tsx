@@ -28,7 +28,7 @@ const Tabbed = ({ options }: TabbedProps) => {
       <TabList className="flex text-2xl font-medium text-center text-white w-full">
         {options.map((item, index) => (
           <TabTrigger
-            key={index}
+            key={`${item.value}${index}`}
             className={`border-b w-full max-w-[380px] ${
               activeTab === options[index].value
                 ? "border-white"
@@ -43,7 +43,7 @@ const Tabbed = ({ options }: TabbedProps) => {
       </TabList>
 
       {options.map((item, index) => (
-        <TabContent key={index} value={item.value}>
+        <TabContent key={`${item.value}${index}`} value={item.value}>
           {item.component}
         </TabContent>
       ))}

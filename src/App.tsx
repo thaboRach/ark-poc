@@ -1,13 +1,8 @@
-import { useMultiStep } from "./hooks/use-multi-step";
-import Splash from "./pages/Splash";
-import Onboarding from "./pages/Onboarding";
+import { RouterProvider } from "react-router-dom";
+import Router from "./router/router";
 
 function App() {
-  const { step, next, back } = useMultiStep([
-    <Splash onNext={() => next()} />,
-    <Onboarding onNext={() => next()} onBack={() => back()} />,
-  ]);
-  return <>{step}</>;
+  return <RouterProvider router={Router} />;
 }
 
 export default App;

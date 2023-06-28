@@ -1,3 +1,5 @@
+import { useField } from "formik";
+
 type InputType = "text" | "tel" | "email" | "number" | "password" | "url";
 type InputMode =
   | "text"
@@ -8,7 +10,7 @@ type InputMode =
   | "decimal"
   | "search";
 
-interface InputFieldProps {
+interface FormikInputProps {
   name: string;
   placeholder: string;
   label?: string;
@@ -18,7 +20,7 @@ interface InputFieldProps {
   inputmode?: InputMode;
 }
 
-const InputField = ({
+const FormikInput = ({
   name,
   placeholder,
   label,
@@ -26,15 +28,20 @@ const InputField = ({
   inputmode = "text",
   required,
   disabled,
-}: InputFieldProps) => {
+}: FormikInputProps) => {
+  const [field] = useField(name);
+
   return (
     <div className="flex flex-col gap-1 w-full max-w-[320px]">
-      {label && <label htmlFor={name}>{label}</label>}
+      {label && <label htmlFor={field.name}>{label}</label>}
 
       <input
         className="w-full h-[50px] bg-[rgba(255,255,255,0.15)] text-sm text-white placeholder:text-white px-4 border-[2px] border-solid border-white rounded-xl"
-        id={name}
+        id={field.name}
         type={type}
+        value={field.value}
+        onBlur={field.onBlur}
+        onChange={field.onChange}
         inputMode={inputmode}
         placeholder={placeholder}
         required={required}
@@ -44,4 +51,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default FormikInput;

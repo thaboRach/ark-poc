@@ -25,7 +25,7 @@ const SignUp = () => {
   }
 
   return (
-    <section className="flex flex-col flex-1 items-center gap-6 pt-20">
+    <section className="flex flex-col items-center flex-1 gap-6 pt-20">
       <h2 className="text-4xl text-white">Join us</h2>
       {location.pathname === "/normal" ? (
         <SignUpForm />

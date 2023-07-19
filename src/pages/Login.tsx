@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import TabsContext from "../context/tabs-context";
 import LoginForm from "../forms/LoginForm";
 import LoginFormikForm from "../forms/LoginFormikForm";
@@ -9,6 +9,7 @@ import { LoginSchema } from "../utils/schemas";
 const Login = () => {
   const { setActiveTab } = useContext(TabsContext);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const initialValues: ILoginForm = {
     firstName: "",
@@ -18,10 +19,12 @@ const Login = () => {
 
   function handleSubmit(values: ILoginForm) {
     window.alert(JSON.stringify(values));
+
+    navigate("/dashboard");
   }
 
   return (
-    <section className="flex flex-col flex-1 items-center gap-6 pt-20">
+    <section className="flex flex-col items-center flex-1 gap-6 pt-20">
       <h2 className="text-4xl text-white">Welcome</h2>
       {location.pathname === "/normal" ? (
         <LoginForm />

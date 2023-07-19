@@ -28,13 +28,13 @@ const Button = ({
     "text-[#C25457]": textColor === "red",
     "text-[#3D64C3]": textColor === "blue",
     "bg-white shadow-3xl": !secondary,
-    " bg-transparent text-white border-[1px] border-solid border-[rgba(238,238,238,0.5)]":
+    "bg-transparent text-white border-[1px] border-solid border-[rgba(238,238,238,0.5)]":
       secondary,
   });
 
   return (
     <button type={type} className={btnClass} onClick={onClick}>
-      {icon && <img className="w-5 h-5 absolute ml-4" src={icon} alt="icon" />}
+      {icon && <img className="absolute w-5 h-5 ml-4" src={icon} alt="icon" />}
 
       {children}
     </button>

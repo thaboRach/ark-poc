@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ark-poc
+  description: A proof of concept made to test creating components using Ark-UI
+  title: Ark POC # A display name
+  tags:
+    - typescript
+    - react
+spec:
+  type: website
+  lifecycle: production
+  owner: frontend-team
+  system: public-websites

@@ -8,5 +8,5 @@ export default defineConfig({
   server: {
     open: true,
   },
-  // base: "/ark-poc/",
+  base: "/ark-poc/",
 });

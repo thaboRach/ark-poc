@@ -7,6 +7,16 @@ metadata:
   tags:
     - typescript
     - react
+  links:
+    - url: https://d2qaddktz8ee6c.cloudfront.net/ark-poc
+      title: Home
+      icon: house
+    - url: https://d2qaddktz8ee6c.cloudfront.net/ark-poc/formik
+      title: Formik form
+      icon: notes
+    - url: https://d2qaddktz8ee6c.cloudfront.net/ark-poc/normal
+      title: Normal form
+      icon: notes
 spec:
   type: website
   lifecycle: production

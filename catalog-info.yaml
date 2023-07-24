@@ -20,6 +20,8 @@ metadata:
     - url: https://thaborach.github.io/ark-poc/
       title: Github pages
       icon: notes
+  annotations:
+    github.com/project-slug: "backstage/backstage"
 spec:
   type: website
   lifecycle: production

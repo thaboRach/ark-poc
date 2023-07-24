@@ -21,7 +21,7 @@ metadata:
       title: Github pages
       icon: notes
   annotations:
-    github.com/project-slug: "backstage/backstage"
+    github.com/project-slug: "thaboRach/ark-poc"
 spec:
   type: website
   lifecycle: production

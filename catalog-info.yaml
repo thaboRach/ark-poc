@@ -17,6 +17,9 @@ metadata:
     - url: https://d2qaddktz8ee6c.cloudfront.net/ark-poc/normal
       title: Normal form
       icon: notes
+    - url: https://thaborach.github.io/ark-poc/
+      title: Github pages
+      icon: notes
 spec:
   type: website
   lifecycle: production

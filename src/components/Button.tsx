@@ -1,10 +1,11 @@
-import classNames from "classnames";
 import React from "react";
+import classNames from "classnames";
 
 interface ButtonProps {
   children: React.ReactNode;
   textColor?: "pink" | "red" | "blue";
   secondary?: boolean;
+  tertiary?: boolean;
   onClick: () => void;
   border?: "standard" | "circle";
   type?: "submit" | "button";
@@ -15,6 +16,7 @@ const Button = ({
   children,
   textColor = "red",
   secondary,
+  tertiary,
   onClick,
   border = "standard",
   type = "button",
@@ -30,6 +32,8 @@ const Button = ({
     "bg-white shadow-3xl": !secondary,
     "bg-transparent text-white border-[1px] border-solid border-[rgba(238,238,238,0.5)]":
       secondary,
+    "bg-gradient-to-r from-[#FA4A6F] from-0% via-[#EF5395] via-30% via-[#DE4DCB] via-75% to-[#CE4CE6] to-100%":
+      tertiary,
   });
 
   return (
@@ -42,3 +46,5 @@ const Button = ({
 };
 
 export default Button;
+// background: linear-gradient(0deg, #AAAAAA, #AAAAAA),
+// linear-gradient(225deg, #FA4A6F 0%, #EF5395 30.91%, #DE4DCB 75.85%, #CE4CE6 100%);

@@ -6,7 +6,7 @@ import LoginFormikForm from "../forms/LoginFormikForm";
 import { ILoginForm } from "../types";
 import { LoginSchema } from "../utils/schemas";
 
-const Login = () => {
+const LoginPage = () => {
   const { setActiveTab } = useContext(TabsContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Login = () => {
   function handleSubmit(values: ILoginForm) {
     window.alert(JSON.stringify(values));
 
-    navigate("/dashboard");
+    navigate("/main");
   }
 
   return (
@@ -37,16 +37,16 @@ const Login = () => {
       )}
       <div className="flex items-center justify-center gap-1 mt-auto border-t border-white max-w-[600px] w-full py-10">
         <p className="text-white opacity-50">NEW USER?</p>
-        {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-        <p
+        <button
+          type="button"
           onClick={() => setActiveTab("signUp")}
           className="text-white underline cursor-pointer"
         >
           SIGN UP
-        </p>
+        </button>
       </div>
     </section>
   );
 };
 
-export default Login;
+export default LoginPage;

@@ -38,13 +38,13 @@ const SignUp = () => {
       )}
       <div className="flex items-center justify-center gap-1 mt-auto border-t border-white max-w-[600px] w-full py-10">
         <p className="text-white opacity-50">ALREADY DID THIS?</p>
-        {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-        <p
+        <button
+          type="button"
           onClick={() => setActiveTab("login")}
           className="text-white underline cursor-pointer"
         >
           LOGIN
-        </p>
+        </button>
       </div>
     </section>
   );

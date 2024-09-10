@@ -9,7 +9,7 @@ const LogoHolder = ({ size = "large" }: LogoProps) => {
     "w-[95px] h-[95px]": size === "large",
     "w-[50px] h-[50px]": size === "small",
   });
-  return <div className={logoClass}></div>;
+  return <div className={logoClass} />;
 };
 
 export default LogoHolder;
